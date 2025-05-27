@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Descope } from "@descope/react-sdk";
 
-function App() {
+const App: React.FC = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Descope
+      flowId="sign-in-email-or-phone-input"
+      onSuccess={(e) => {
+        window.alert("lsdfkjdlkjslkdfj")
+      }}
+      onError={(e) => console.log("Could not log in!", e)}
+    />
   );
-}
+};
 
 export default App;
